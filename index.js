@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let res = await axios.get("https://ghibliapi.herokuapp.com/films")
             let movies = res.data
             movies.forEach(movie=>{
-                let list 
+                let option = document.createElement("option")
+                option.innerText=movie.title
+                select.appendChild(option)
+                debugger
 
             })
             debugger
