@@ -1,0 +1,9 @@
+body{
+    display:flex;
+    font-family: monospace;
+    background-color: lavender;
+
+}
+h1{
+    display: flex
+}
