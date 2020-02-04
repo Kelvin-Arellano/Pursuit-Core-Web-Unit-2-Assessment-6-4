@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-    let select = document.querySelector("select")
+    let select = document.querySelector("#select")
     let form = document.querySelector("form")
     let review = document.querySelector("#review")
     let ul = document.querySelector("ul")
     let textBox = document.querySelector("#textBox")
+    
     const getMovieNames = async () =>{
         try {
             let res = await axios.get("https://ghibliapi.herokuapp.com/films")
@@ -12,7 +13,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 let option = document.createElement("option")
                 option.innerText=movie.title
                 select.appendChild(option)
-
             })
         }catch(err){
             console.log(err)
@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
            let title = document.createElement("h3")
            title.className = "title"
-           title.innerText = movie.title
+           title.innerText = movieInfo.title
            content.appendChild(title)
 
            let releaseDate = document.createElement("p")
            releaseDate.className = "releaseDate"
-           releaseDate.innerText = movie.release_date
+           releaseDate.innerText = movieInfo.release_date
            content.appendChild(releaseDate)
 
            let description = document.createElement("p")
            description.className = "description"
-           description.innerText = movie.description
+           description.innerText = movieInfo.description
            content.appendChild(description)
         }catch(err){
             console.log(err)
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     const postReview = (review) => {
         let li = document.createElement("li")
-        let title = socument.createElement("b")
+        let title = document.createElement("b")
         title.innerText = select.options[select.SelectedIndex].text + ": "
         let post = document.createElement("p")
         li.innerText = review
@@ -62,9 +62,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     })
 
-    form.addEventListener(submit, (event) => {
+    form.addEventListener("submit", (event) => {
         event.preventDefault()
         postReview(userInput.value)
     })
+    
     getMovieNames()
 })
