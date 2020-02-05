@@ -1,9 +1,58 @@
-body{
-    display:flex;
+body {
     font-family: monospace;
-    background-color: lavender;
-
+    background: lavender;
+    justify-content: center;
 }
-h1{
-    display: flex
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    height: 150px;
+    background: skyblue;
+    margin: auto;
+}
+
+img {
+    width: 33.33%;
+    padding: 5px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    margin-top: 50px;
+    padding: 10px; 
+}
+
+#content {
+    width: 60%;
+}
+
+select {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 2% 2% 2% 30%;
+}
+
+#review {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 30%;
+}
+
+form {
+    display: flex;
+    justify-content: left;
+    margin-left: 30%;
+}
+
+#textBox { 
+    width: 60%;
+}
+
+ul {
+    margin-left: 30%;
 }
